@@ -1,3 +1,18 @@
+/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and the clean version of cc_decompte in order to identify
+potential outliers within the different categories
+
+Objectives : 
+- For each account id we check the average of headcount (licenses) throughout the period given and we compare it to the categories standards 
+(0-100 Bronze /  100-250 Silver / 250-500 Gold / 500+ Platinium). if it is not in thoses standards we keep this outlier to the new table created and we 
+note the theorical category (based on the calculated average number of headcount)
+
+Note : in the created table we keep only the lines where the created status is "Mal catégorisé ⚠️"
+
+Source table : 
+- `data-technical-cases.mguerout.cc_decompte_cleaned`
+- `data-technical-cases.mguerout.salesforce_account_clean_ex1`
+*/
+
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.ex1_comptes_outliers` AS
 SELECT 
   a.AccountCategorie__c as categorie,
