@@ -1,3 +1,12 @@
+/* STEP 1 : Create a table from the table ex1_arr_evolution_typologie in order to have the growth of the ARR for each category
+
+Objectives : 
+
+
+Source table : 
+- `data-technical-cases.mguerout.ex1_arr_evolution_typologie`
+*/
+
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.ex1_taux_croissance_typologie` AS
 WITH premier_dernier_mois AS (
   SELECT 
