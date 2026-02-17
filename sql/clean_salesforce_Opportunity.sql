@@ -1,3 +1,13 @@
+/* STEP 1 : Create a cleaned salesforce_Opportunity table
+
+Objectives : 
+- Split the column Interesse_par_cc because we need to have on each line only one product
+- Clean mistakes made in this column like put a ", " insted of ";"
+
+Source table : 
+- `data-technical-cases.da_case.salesforce_Opportunity`
+*/
+
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.salesforce_opportunity_cleaned` AS
 SELECT 
   o.*,
