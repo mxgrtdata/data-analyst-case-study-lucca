@@ -1,3 +1,18 @@
+/* STEP 1 : Create a table from the clean version of cc_decompte in order to analyze the evolution of ARR by product
+
+Objectives : 
+- Each line is a unique combination of a product and a billing_period_date
+- For each unique combination we provide :
+  - The number of distinct account id
+  - the MRR
+  - the ARR
+  - the total number of licenses
+  - the average ARR by licenses
+
+Source table : 
+- `data-technical-cases.mguerout.cc_decompte_cleaned`
+*/
+
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.ex2_arr_mensuel_par_produit` AS
 SELECT 
   produit_standardise as produit,
