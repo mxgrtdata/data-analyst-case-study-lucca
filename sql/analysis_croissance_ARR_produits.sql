@@ -1,3 +1,19 @@
+/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and the clean version of cc_decompte in order to analyze the evolution of ARR by typology
+
+Objectives : 
+- Each line is a unique combination of a category and a billing_period_date
+- For each unique combination we provide :
+  - The number of distinct account id
+  - the average ARR
+  - the total ARR
+  - the average number of headcount (licenses)
+  - the average ARR by licenses
+
+Source table : 
+- `data-technical-cases.mguerout.cc_decompte_cleaned`
+- `data-technical-cases.mguerout.salesforce_account_clean_ex1`
+*/
+
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.ex2_croissance_arr_produits` AS
 WITH stats_debut_fin AS (
   SELECT 
