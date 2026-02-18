@@ -1,7 +1,8 @@
 /* STEP 1 : Create a table from the table ex1_arr_evolution_typologie in order to have the growth of the ARR for each category
 
 Objectives : 
-
+- Each line corresponds to a unique typology
+- For each unique typology we provide many informations used to analyze the growth for each product
 
 Source table : 
 - `data-technical-cases.mguerout.ex1_arr_evolution_typologie`
