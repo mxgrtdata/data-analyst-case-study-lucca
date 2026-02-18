@@ -1,17 +1,11 @@
-/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and the clean version of cc_decompte in order to analyze the evolution of ARR by typology
+/* STEP 1 : Create a table from the table ex2_arr_mensuel_par_produit in order to have the growth of the ARR for each product
 
 Objectives : 
-- Each line is a unique combination of a category and a billing_period_date
-- For each unique combination we provide :
-  - The number of distinct account id
-  - the average ARR
-  - the total ARR
-  - the average number of headcount (licenses)
-  - the average ARR by licenses
+- Each line corresponds to a unique product
+- For each unique product we provide many informations used to analyze the growth for each product
 
 Source table : 
-- `data-technical-cases.mguerout.cc_decompte_cleaned`
-- `data-technical-cases.mguerout.salesforce_account_clean_ex1`
+- `ex2_arr_mensuel_par_produit`
 */
 
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.ex2_croissance_arr_produits` AS
