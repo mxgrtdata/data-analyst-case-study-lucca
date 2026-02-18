@@ -2,6 +2,7 @@
 
 Objectives : 
 - Standardize names for the product column
+- Remove all lines related to an old product
 
 Source table : 
 - `data-technical-cases.da_case.cc_decompte`
@@ -20,16 +21,16 @@ SELECT
     
     -- Pagga
     WHEN Product LIKE '%Pagga Bulletin%' OR Product LIKE '%Pagga Nomina%' OR Product LIKE '%Pagga Payslip%' OR Product LIKE '%Pagga Fiche de salaire%' THEN 'Pagga Bulletin de paie'
-    WHEN Product LIKE '%Pagga Rémunération%' OR Product LIKE '%Pagga Masa salarial%' OR Product LIKE '%Pagga rémunération%'  THEN 'Pagga Rémunération'
+    WHEN Product LIKE '%Pagga Rémunération%' OR Product LIKE '%Pagga Masa salarial%' OR Product LIKE '%Pagga rémunération%' THEN 'Pagga Rémunération'
     WHEN Product LIKE '%Pagga Assistant Paie%' THEN 'Pagga Assistant Paie'
     
     -- Cleemy
     WHEN Product LIKE '%Cleemy Notes de frais%' OR Product LIKE '%Notas de gastos%' OR Product LIKE '%Cleemy Note de frais%' OR Product LIKE '%Cleemy Note%' THEN 'Cleemy Note de frais'
-    WHEN Product LIKE '%Cleemy Achats%' OR Product LIKE '%Notas de gastos%' THEN 'Cleemy Note de frais'
+    WHEN Product LIKE '%Cleemy Achats%' THEN 'Cleemy Achats'
     WHEN Product LIKE '%Cleemy Dépenses%' THEN 'Cleemy Dépenses'
     WHEN Product LIKE '%Cleemy Paiement%' THEN 'Cleemy Paiement'
     WHEN Product LIKE '%Cleemy Banking%' THEN 'Cleemy Banking'
-
+    
     -- Poplee
     WHEN Product LIKE '%Poplee Entretien%' THEN 'Poplee Entretien'
     WHEN Product LIKE '%Poplee Engagement%' THEN 'Poplee Engagement'
@@ -38,7 +39,7 @@ SELECT
     WHEN Product LIKE '%Poplee Core HR%' THEN 'Poplee Core HR'
     WHEN Product LIKE '%Poplee Clima Laboral%' THEN 'Poplee Climat de travail'
     WHEN Product LIKE '%Poplee sans signature%' THEN 'Poplee sans signature'
-
+    
     -- Socle RH
     WHEN Product LIKE '%Socle RH%' THEN 'Socle RH'
     
@@ -70,4 +71,5 @@ SELECT
     ELSE 'Autre'
   END as produit_standardise
   
-FROM `data-technical-cases.da_case.cc_decompte`;
+FROM `data-technical-cases.da_case.cc_decompte`
+WHERE Product NOT LIKE '%OLD%';
