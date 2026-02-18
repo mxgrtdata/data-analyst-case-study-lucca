@@ -1,3 +1,15 @@
+/* STEP 1 : Create a intermediate table from the clean version of salesforce_Opportunity
+Objectives : 
+- Having for each product :
+  - The total number of opportunities
+  - The total number of opportunities won
+  - The total number of opportunities lost
+  - The conversion rate
+
+Source table : 
+- `data-technical-cases.mguerout.salesforce_opportunity_cleaned`
+*/
+
 CREATE OR REPLACE TABLE `data-technical-cases.mguerout.ex2_performance_produits_bookings` AS
 SELECT 
   Produit_interesse as produit,
