@@ -1,4 +1,4 @@
-/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and the clean version of cc_decompte in order to analyze the evolution of ARR by typology
+/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and cc_decompte in order to analyze the evolution of ARR by typology
 
 Objectives : 
 - Each line is a unique combination of a category and a billing_period_date
