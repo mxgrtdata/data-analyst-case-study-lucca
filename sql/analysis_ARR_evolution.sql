@@ -1,4 +1,4 @@
-/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and cc_decompte in order to analyze the evolution of ARR by typology
+/* STEP 1 : Create a intermediate table from the clean version of salesforce_Account and the clean version of cc_decompte in order to analyze the evolution of ARR by typology
 
 Objectives : 
 - Each line is a unique combination of a category and a billing_period_date
@@ -23,7 +23,7 @@ SELECT
   SUM(s.revenue * 12) as arr_total,
   AVG(s.headcount) as headcount_moyen,
   AVG(s.revenue * 12 / NULLIF(s.headcount, 0)) as arr_par_licence
-FROM `data-technical-cases.mguerout.cc_decompte` s
+FROM `data-technical-cases.mguerout.cc_decompte_cleaned` s
 LEFT JOIN `data-technical-cases.mguerout.salesforce_account_clean_ex1` a
   ON s.cc_account_id = a.ID_CC__c
 WHERE s.headcount > 0
